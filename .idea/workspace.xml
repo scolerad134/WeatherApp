@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c09aba7-82e5-421d-8a5e-f4db1b517d4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/weather/models/Weather.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/weather/repositories/WeatherRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/weather/service/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/controllers/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/controllers/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.17.executor": "Debug",
+    "Tomcat Server.Tomcat 10.1.17.executor": "Run",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/user/Рабочий стол/java/homework/WeatherApp",
@@ -186,22 +182,11 @@
       <workItem from="1710247505000" duration="252000" />
       <workItem from="1710252493216" duration="2558000" />
       <workItem from="1710255486958" duration="5110000" />
-      <workItem from="1710328463781" duration="3261000" />
+      <workItem from="1710328463781" duration="4605000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/weather/controllers/MainServlet.java</url>
-          <line>141</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
