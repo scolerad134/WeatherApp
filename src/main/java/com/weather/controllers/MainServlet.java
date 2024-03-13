@@ -1,5 +1,8 @@
 package com.weather.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.weather.models.Weather;
+import com.weather.service.WeatherService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpSession;
 import org.apache.http.client.HttpClient;
@@ -17,6 +20,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
+import java.sql.SQLException;
+import java.util.Map;
 
 public class MainServlet extends jakarta.servlet.http.HttpServlet {
 
@@ -26,14 +31,20 @@ public class MainServlet extends jakarta.servlet.http.HttpServlet {
     public static String lat = "";
     public static String lon = "";
 
+    private final WeatherService weatherService;
+
+    public MainServlet() {
+        this.weatherService = new WeatherService();
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String city;
         HttpSession session = req.getSession();
         session.setAttribute("isAtt", false);
 
-        if (req.getParameter("city") != null) {
-            String city = req.getParameter("city");
+        if ((city = req.getParameter("city")) != null) {
             session.setAttribute("town", city);
             httpGeocoderRequest(city);
             StringBuilder result = httpYandexWeatherRequest();
@@ -41,7 +52,20 @@ public class MainServlet extends jakarta.servlet.http.HttpServlet {
             session.setAttribute("isAtt", true);
             session.setAttribute("weather", result);
 
-            System.out.println(result);
+            ObjectMapper mapper = new ObjectMapper();
+            Map<String, Object> map = mapper.readValue(session.getAttribute("weather").toString(), Map.class);
+            Weather weather = new Weather(city,
+                    new Double(String.valueOf(map.get("temp").toString() == null ? 0 : map.get("temp").toString())),
+                    new Double(String.valueOf(map.get("feels_like").toString() == null ? 0 : map.get("feels_like").toString())),
+                    new Integer(String.valueOf(map.get("humidity").toString() == null ? 0 : map.get("humidity").toString())),
+                    new Double(String.valueOf(map.get("wind_speed").toString() == null ? 0 : map.get("wind_speed").toString())),
+                    new Double(String.valueOf(map.get("temp_water") == null ? 0 : map.get("temp_water").toString())));
+
+            try {
+                addToDataBase(weather);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("main.jsp");
@@ -49,7 +73,7 @@ public class MainServlet extends jakarta.servlet.http.HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
     }
 
     private void httpGeocoderRequest(String city) {
@@ -112,6 +136,13 @@ public class MainServlet extends jakarta.servlet.http.HttpServlet {
         }
 
         return result;
+    }
+
+    private void addToDataBase(Weather weather) throws SQLException {
+        if (weatherService.findById(weather.getCity()).isPresent())
+            weatherService.update(weather);
+        else
+            weatherService.save(weather);
     }
 }
 
