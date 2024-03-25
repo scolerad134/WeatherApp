@@ -139,10 +139,7 @@ public class MainServlet extends jakarta.servlet.http.HttpServlet {
     }
 
     private void addToDataBase(Weather weather) throws SQLException {
-        if (weatherService.findById(weather.getCity()).isPresent())
-            weatherService.update(weather);
-        else
-            weatherService.save(weather);
+        weatherService.save(weather);
     }
 }
 

@@ -10,8 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c09aba7-82e5-421d-8a5e-f4db1b517d4b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weather.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/controllers/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/controllers/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/models/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/models/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/repositories/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/repositories/WeatherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/repositories/WeatherRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/repositories/WeatherRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weather/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weather/service/WeatherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +59,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.17.executor": "Run",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
@@ -182,11 +191,23 @@
       <workItem from="1710247505000" duration="252000" />
       <workItem from="1710252493216" duration="2558000" />
       <workItem from="1710255486958" duration="5110000" />
-      <workItem from="1710328463781" duration="4605000" />
+      <workItem from="1710328463781" duration="5316000" />
+      <workItem from="1710414426783" duration="299000" />
+      <workItem from="1711026755764" duration="649000" />
+      <workItem from="1711375556705" duration="1408000" />
+      <workItem from="1711378793005" duration="586000" />
+      <workItem from="1711379457460" duration="2340000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

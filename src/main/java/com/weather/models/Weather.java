@@ -1,11 +1,26 @@
 package com.weather.models;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "weather")
 public class Weather {
+    @Id
+    @Column(name = "city")
     private String city;
+    @Column(name = "temp")
     private double temp;
+    @Column(name = "feels_like")
     private double feels_like;
+    @Column(name = "humidity")
     private int humidity;
+    @Column(name = "wind_speed")
     private double wind_speed;
+    @Column(name = "temp_water")
     private double temp_water;
 
     public Weather() {

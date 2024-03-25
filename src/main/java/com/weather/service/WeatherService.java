@@ -21,9 +21,7 @@ public class WeatherService {
     public void save(Weather weather) throws SQLException {
         weatherRepository.save(weather);
     }
-    public void update(Weather weather) throws SQLException {
-        weatherRepository.update(weather);
-    }
+
     public void delete(String city) throws SQLException {
         weatherRepository.delete(city);
     }
